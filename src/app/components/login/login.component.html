@@ -1,0 +1,53 @@
+<!-- <p>login works!</p>
+<button [routerLink]="['/dashboard']">Dashy</button> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Audit</title>
+</head>
+	<body>
+				<div class="book">
+					<div class="book__form">
+						<form [formGroup]="signInForm" (ngSubmit)="onSubmit()" class="form">
+              <div formGroupName="userData">
+
+                <!-- Header -->
+                <div class="u-margin-bottom-big">
+                  <h2 class="heading-secondary">Auditors Hub</h2>
+                </div>
+
+                <!-- Name -->
+                <div class="form__group">
+                  <label class="form__label">Full name </label>
+                  <input
+                  formControlName="name"
+                  type="text"
+                  id="name"
+                  class="form-control form__input"
+                  placeholder="Full Name">
+                </div>
+
+                <!-- Email -->
+                <div class="form__group">
+                  <label for="email" class="form__label">Email </label>
+                  <input
+                  formControlName="email"
+                  type="email"
+                  id="email"
+                  class="form-control form__input"
+                  placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <div (click)=onSubmit() class="btn btn--green">Login &rarr;</div>
+                </div>
+
+
+              </div>
+						</form>
+					</div>
+			</div>
+	</body>
+</html>

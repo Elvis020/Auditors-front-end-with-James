@@ -1,0 +1,181 @@
+
+
+
+
+
+
+// Base
+$color-white:#ffffff;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+$color-primary: #55c57a;
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+$color-grey-dark: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+$color-black: #000000;
+$default-font-size: 16px;
+
+
+
+html,body {
+  box-sizing: border-box;
+  font-family:"Lato",sans-serif;
+  background-image: linear-gradient(to left bottom, $color-primary-light, $color-primary-dark);
+  height: 100vh;
+  overflow-y: hidden;
+
+}
+
+.book {
+  background-image: linear-gradient(-115deg,
+                    rgba($color-white, .9) 0%,
+                    rgba($color-white, .7) 55%,
+                    transparent 50%),
+                    url(./img/nat-10.jpg);
+  background-size: cover;
+  height: 75vh;
+  width: 80vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, .25);
+
+  &__form {
+    width: 50%;
+    margin-left: 45%;
+    padding: 60px;
+  }
+}
+
+
+.heading-secondary {
+  font-size: 35px;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+  display: inline-block;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: all .2s;
+  letter-spacing: .4rem;
+
+  &:hover {
+    transform: skewY(-2deg) skewX(-15deg) scale(1.1);
+    text-shadow: .5rem 1rem 2rem rgba($color-black,.3);
+  }
+}
+
+.u-margin-bottom-big {
+  margin-bottom: 1.5rem !important;
+}
+
+.form {
+  &__group:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  &__input {
+    font-size: 15px;
+    font-family: inherit;
+    color: inherit;
+    padding: 15px 20px;
+    border-radius: 2px;
+    background-color: rgba($color-grey-light-1, .9);
+    border: none;
+    border-bottom: 3px solid transparent;
+    width: 80%;
+    display: block;
+
+    &:focus {
+      outline: none;
+      box-shadow:  0 10px 20px rgba($color-black, .1);
+      border-bottom: 3px solid $color-primary;
+    }
+
+    &::webkit-input-placeholder {
+      color: $color-grey-dark-2;
+    }
+
+  }
+
+  &__label {
+    font-size: 12px;
+    font-weight: 700;
+    margin-left: 20px;
+    margin-top: 7px;
+    display: block;
+    transition: all .3s;
+  }
+
+
+  &__input:placeholder-shown + &__label{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem)
+  }
+}
+
+.btn{
+  &,
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 5px;
+    transition: all .2s;
+    font-size: $default-font-size;
+    position: relative;
+    margin-left: 30%;
+
+
+    /// Change for button element
+    border: none;
+    cursor: pointer;
+  }
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba($color-black,.3);
+    &:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &:active,
+  &:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba($color-black,.3);
+  }
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+    &::after {
+      background-color: $color-primary;
+    }
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+  }
+  &--animated {
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards ;
+  }
+}
+
+
+
